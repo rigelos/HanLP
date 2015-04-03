@@ -162,7 +162,7 @@ public abstract class BaseNode<V> implements Comparable<BaseNode>
         }
     }
 
-    protected void walkToLoad(ByteArray byteArray, ValueArray valueArray)
+    protected void walkToLoad(ByteArray byteArray, ValueArray<V> valueArray)
     {
         c = byteArray.nextChar();
         status = ARRAY_STATUS[byteArray.nextInt()];
@@ -215,7 +215,7 @@ public abstract class BaseNode<V> implements Comparable<BaseNode>
     /**
      * 对值数组的包装，可以方便地取下一个
      */
-    public class ValueArray
+    public class ValueArray<V>
     {
         V[] value;
         int offset;
